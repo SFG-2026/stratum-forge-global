@@ -191,11 +191,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
               <div className="pt-1 border-t border-slate-200/60 flex flex-col gap-1 text-[11px]">
                 <div className="flex items-center gap-2">
                   <Phone className="w-3 h-3 text-blue-600 flex-shrink-0" />
-                  <a href="tel:+919566065552" className="hover:text-blue-600">+91 9566065552</a>
+                  <a href="tel:+917483545473" className="hover:text-blue-600">+91 7483545473</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-3 h-3 text-brand-orange flex-shrink-0" />
-                  <a href="tel:+917483545473" className="hover:text-brand-orange">+91 7483545473</a>
+                  <a href="tel:+919566065552" className="hover:text-brand-orange">+91 9566065552</a>
                 </div>
               </div>
             </div>

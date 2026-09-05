@@ -128,14 +128,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="flex flex-col gap-1.5 pt-1">
                 <div className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-blue-400 flex-shrink-0" />
-                  <a href="tel:+919566065552" className="hover:text-cyan-300 font-mono text-xs text-slate-200">
-                    +91 9566065552
+                  <a href="tel:+917483545473" className="hover:text-cyan-300 font-mono text-xs text-slate-200">
+                    +91 7483545473
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
-                  <a href="tel:+917483545473" className="hover:text-cyan-300 font-mono text-xs text-slate-200">
-                    +91 7483545473
+                  <a href="tel:+919566065552" className="hover:text-cyan-300 font-mono text-xs text-slate-200">
+                    +91 9566065552
                   </a>
                 </div>
               </div>

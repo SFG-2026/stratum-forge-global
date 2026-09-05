@@ -29,9 +29,9 @@ export const BRAND_DATA = {
     email: "admin@stratumforgeglobal.com",
     location: "Chennai, India",
     region: "India & South Asia",
-    phone: "+91 9566065552 / +91 7483545473",
-    phonePrimary: "+91 9566065552",
-    phoneSecondary: "+91 7483545473",
+    phone: "+91 7483545473 / +91 9566065552",
+    phonePrimary: "+91 7483545473",
+    phoneSecondary: "+91 9566065552",
   },
   stats: [
     {

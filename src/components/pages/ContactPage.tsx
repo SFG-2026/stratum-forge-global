@@ -149,18 +149,18 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <a
-                      href="tel:+919566065552"
-                      className="text-sm sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-2"
-                    >
-                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">Direct:</span>
-                      <span>+91 9566065552</span>
-                    </a>
-                    <a
                       href="tel:+917483545473"
                       className="text-sm sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-2"
                     >
-                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded bg-orange-100 text-brand-orange">Direct:</span>
+                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">Direct:</span>
                       <span>+91 7483545473</span>
+                    </a>
+                    <a
+                      href="tel:+919566065552"
+                      className="text-sm sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-2"
+                    >
+                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded bg-orange-100 text-brand-orange">Direct:</span>
+                      <span>+91 9566065552</span>
                     </a>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">
