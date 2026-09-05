@@ -33,22 +33,22 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
     <div className="pt-24 pb-20 bg-white text-slate-800">
       
       {/* Header with Dynamic Aurora Mesh */}
-      <section className="relative py-20 bg-white border-b border-slate-200 overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-white border-b border-slate-200 overflow-hidden">
         <div className="absolute inset-0 hero-aurora-mesh opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <Badge variant="cyan" icon={<Handshake className="w-3.5 h-3.5" />} className="mb-4">
+          <Badge variant="cyan" icon={<Handshake className="w-3.5 h-3.5" />} className="mb-3 sm:mb-4">
             Ecosystem Collaboration
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto break-words">
             Built on Strong Partnerships.
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
             "{BRAND_DATA.partnerEcosystem.body}"
           </p>
 
-          <p className="mt-3 text-sm text-slate-500 font-sans max-w-2xl mx-auto">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-slate-500 font-sans max-w-2xl mx-auto">
             {BRAND_DATA.partnerEcosystem.supportingText}
           </p>
         </div>

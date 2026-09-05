@@ -44,13 +44,24 @@ export const AnimatedHeroCanvas: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Mouse interaction
-    const mouse = { x: -1000, y: -1000, radius: 160 };
+    // Mouse interaction across container
+    const mouse = { x: -1000, y: -1000, radius: 170 };
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      } else {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      }
     };
 
     const handleMouseLeave = () => {
@@ -58,8 +69,8 @@ export const AnimatedHeroCanvas: React.FC = () => {
       mouse.y = -1000;
     };
 
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
 
     // Color Palette
     const colors = [
@@ -239,15 +250,15 @@ export const AnimatedHeroCanvas: React.FC = () => {
       cancelAnimationFrame(animationFrameId);
       clearInterval(pulseInterval);
       window.removeEventListener("resize", handleResize);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-auto z-0"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
       style={{ touchAction: "none" }}
     />
   );

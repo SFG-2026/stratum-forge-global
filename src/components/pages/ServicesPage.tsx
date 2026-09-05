@@ -46,31 +46,31 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
     <div className="pt-24 pb-20 bg-white text-slate-800">
       
       {/* Header */}
-      <section className="relative py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
         <CircuitBackground density="low" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <Badge variant="cyan" icon={<Sliders className="w-3.5 h-3.5" />} className="mb-4">
+          <Badge variant="cyan" icon={<Sliders className="w-3.5 h-3.5" />} className="mb-3 sm:mb-4">
             Capabilities & Service Architecture
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto break-words">
             One Ecosystem. <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600">
               Five Critical Capabilities.
             </span>
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
             From manufacturing and automated diagnostics to component-level repair, refurbishment, field services, and supply chain assurance.
           </p>
         </div>
       </section>
 
       {/* Main Interactive Services Explorer */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Capability Selectors Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
           {BRAND_DATA.services.map((service) => {
             const Icon = icons[service.id];
             const isActive = service.id === activeServiceId;
@@ -78,15 +78,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
               <button
                 key={service.id}
                 onClick={() => setActiveServiceId(service.id)}
-                className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all duration-300 ${
+                className={`flex items-center gap-2 sm:gap-2.5 px-3.5 py-2 sm:px-5 sm:py-3 rounded-xl font-display font-bold text-xs sm:text-sm active:scale-95 transition-all duration-300 ${
                   isActive
                     ? "bg-blue-600 text-white shadow-md shadow-blue-500/20 border border-blue-700"
                     : "bg-slate-50 text-slate-700 hover:text-blue-600 border border-slate-200 hover:border-blue-200"
                 }`}
               >
-                <Icon className="w-4 h-4 text-current" />
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-current" />
                 <span>{service.title}</span>
-                <span className="text-[10px] font-mono opacity-70">[{service.shortCode}]</span>
+                <span className="text-[9px] sm:text-[10px] font-mono opacity-70">[{service.shortCode}]</span>
               </button>
             );
           })}

@@ -8,22 +8,24 @@ import { RefurbishmentPage } from "./components/pages/RefurbishmentPage";
 import { PartnersPage } from "./components/pages/PartnersPage";
 import { CareersPage } from "./components/pages/CareersPage";
 import { ContactPage } from "./components/pages/ContactPage";
-import { MessageSquare, ArrowUp, Phone, Mail } from "lucide-react";
-import { BRAND_DATA } from "./data/content";
+import { SustainabilityPage } from "./components/pages/SustainabilityPage";
+import { MessageSquare, ArrowUp } from "lucide-react";
 
 export function App() {
   const [currentTab, setCurrentTab] = useState<string>("home");
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 
+  // Valid routes
+  const validRoutes = [
+    "home", "about", "services", "how-it-works", "refurbishment",
+    "partners", "careers", "contact", "sustainability"
+  ];
+
   // Sync hash routing
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
-      if (
-        ["home", "about", "services", "refurbishment", "partners", "careers", "contact"].includes(
-          hash
-        )
-      ) {
+      if (validRoutes.includes(hash)) {
         setCurrentTab(hash);
       }
     };
@@ -65,27 +67,31 @@ export function App() {
         {currentTab === "home" && <HomePage onNavigate={navigateTo} />}
         {currentTab === "about" && <AboutPage onNavigate={navigateTo} />}
         {currentTab === "services" && <ServicesPage onNavigate={navigateTo} />}
+        {/* "how-it-works" maps to the refurbishment page (renamed) */}
+        {currentTab === "how-it-works" && <RefurbishmentPage onNavigate={navigateTo} />}
         {currentTab === "refurbishment" && <RefurbishmentPage onNavigate={navigateTo} />}
         {currentTab === "partners" && <PartnersPage onNavigate={navigateTo} />}
         {currentTab === "careers" && <CareersPage onNavigate={navigateTo} />}
         {currentTab === "contact" && <ContactPage />}
+        {/* Dedicated Sustainability & ESG Page */}
+        {currentTab === "sustainability" && <SustainabilityPage onNavigate={navigateTo} />}
       </main>
 
       {/* Global Enterprise Footer */}
       <Footer onNavigate={navigateTo} />
 
       {/* Floating Action Controls */}
-      <div className="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-30 flex flex-col items-end gap-2.5 sm:gap-3">
         {/* Quick Contact Floating Button - High Contrast & 100% Visible */}
         {currentTab !== "contact" && (
           <button
             onClick={() => navigateTo("contact")}
-            className="flex items-center gap-2.5 px-5 py-3 rounded-full bg-[#0A2540] text-white font-display font-bold text-xs sm:text-sm border-2 border-brand-orange shadow-2xl shadow-orange-500/25 hover:bg-[#07172C] hover:border-orange-400 hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-3.5 py-2 sm:px-5 sm:py-3 rounded-full bg-[#0A2540] text-white font-display font-bold text-xs sm:text-sm border-2 border-brand-orange shadow-2xl shadow-orange-500/25 hover:bg-[#07172C] hover:border-orange-400 active:scale-95 transition-all"
             aria-label="Direct inquiry desk"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-brand-orange animate-ping" />
-            <MessageSquare className="w-4 h-4 text-brand-orange" />
-            <span className="text-white font-extrabold">Direct Inquiry</span>
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-orange animate-ping" />
+            <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-orange" />
+            <span className="text-white font-extrabold text-[11px] sm:text-sm">Direct Inquiry</span>
           </button>
         )}
 
@@ -93,10 +99,10 @@ export function App() {
         {showBackToTop && (
           <button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-surface-elevated/90 border border-slate-700 text-slate-300 hover:text-white hover:border-brand-cyan shadow-lg transition-all focus:outline-none"
+            className="p-2.5 sm:p-3 rounded-full bg-[#0A2540]/90 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-white hover:border-brand-cyan shadow-lg active:scale-95 transition-all focus:outline-none"
             aria-label="Scroll to top"
           >
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         )}
       </div>

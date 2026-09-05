@@ -68,31 +68,31 @@ export const ContactPage: React.FC = () => {
     <div className="pt-24 pb-20 bg-white text-slate-800">
       
       {/* Header */}
-      <section className="relative py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
         <CircuitBackground density="low" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <Badge variant="orange" icon={<Send className="w-3.5 h-3.5" />} className="mb-4">
+          <Badge variant="orange" icon={<Send className="w-3.5 h-3.5" />} className="mb-3 sm:mb-4">
             Enterprise Engagement
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto break-words">
             Let's Talk
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
             Have a technology, repair, refurbishment, manufacturing, or lifecycle challenge? Let's explore how StratumForge Global can help.
           </p>
         </div>
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Column: Official Contact Info & Channel Routing */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-[#0A2540]">
+              <h2 className="text-xl sm:text-3xl font-display font-extrabold text-[#0A2540]">
                 Direct Channels & Regional Hub
               </h2>
               <p className="mt-2 text-sm text-slate-600 font-sans leading-relaxed">
@@ -101,65 +101,65 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Official Details Cards */}
-            <div className="space-y-4">
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                <div className="p-3 rounded-xl bg-orange-50 text-brand-orange border border-orange-200 flex-shrink-0">
-                  <MapPin className="w-6 h-6" />
+            <div className="space-y-3.5 sm:space-y-4">
+              <div className="bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex items-start gap-3 sm:gap-4 shadow-sm">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-orange-50 text-brand-orange border border-orange-200 flex-shrink-0">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">
+                  <div className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">
                     Operational Headquarters
                   </div>
-                  <div className="text-base font-display font-extrabold text-[#0A2540] mt-1">
+                  <div className="text-sm sm:text-base font-display font-extrabold text-[#0A2540] mt-0.5 sm:mt-1">
                     {BRAND_DATA.contact.location}
                   </div>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
                     Strategic Regional Center serving India & South Asia
                   </p>
                 </div>
               </div>
 
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                <div className="p-3 rounded-xl bg-blue-50 text-blue-600 border border-blue-200 flex-shrink-0">
-                  <Mail className="w-6 h-6" />
+              <div className="bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex items-start gap-3 sm:gap-4 shadow-sm">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-blue-50 text-blue-600 border border-blue-200 flex-shrink-0">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">
+                <div className="min-w-0 flex-1">
+                  <div className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">
                     Official Email
                   </div>
                   <a
                     href={`mailto:${BRAND_DATA.contact.email}`}
-                    className="text-base font-mono font-bold text-blue-600 hover:text-blue-800 transition-colors block mt-1 break-all"
+                    className="text-xs xs:text-sm sm:text-base font-mono font-bold text-blue-600 hover:text-blue-800 transition-colors block mt-0.5 sm:mt-1 whitespace-nowrap"
                   >
                     {BRAND_DATA.contact.email}
                   </a>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
                     Monitored 24/7 by enterprise response desk
                   </p>
                 </div>
               </div>
 
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                <div className="p-3 rounded-xl bg-blue-50 text-blue-700 border border-blue-200 flex-shrink-0">
-                  <Phone className="w-6 h-6" />
+              <div className="bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 flex items-start gap-3 sm:gap-4 shadow-sm">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-blue-50 text-blue-700 border border-blue-200 flex-shrink-0">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="space-y-1.5">
-                  <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">
+                <div className="space-y-1 sm:space-y-1.5 min-w-0 flex-1">
+                  <div className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">
                     Direct Lines
                   </div>
                   <div className="flex flex-col gap-1">
                     <a
                       href="tel:+917483545473"
-                      className="text-sm sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-2"
+                      className="text-xs sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"
                     >
-                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">Direct:</span>
+                      <span className="text-[10px] sm:text-xs font-sans font-bold px-1.5 sm:px-2 py-0.5 rounded bg-blue-100 text-blue-800">Direct:</span>
                       <span>+91 7483545473</span>
                     </a>
                     <a
                       href="tel:+919566065552"
-                      className="text-sm sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-2"
+                      className="text-xs sm:text-base font-mono font-bold text-[#0A2540] hover:text-blue-600 transition-colors flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"
                     >
-                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded bg-orange-100 text-brand-orange">Direct:</span>
+                      <span className="text-[10px] sm:text-xs font-sans font-bold px-1.5 sm:px-2 py-0.5 rounded bg-orange-100 text-brand-orange">Direct:</span>
                       <span>+91 9566065552</span>
                     </a>
                   </div>

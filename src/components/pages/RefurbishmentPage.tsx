@@ -18,34 +18,34 @@ export const RefurbishmentPage: React.FC<RefurbishmentPageProps> = ({ onNavigate
     <div className="pt-24 pb-20 bg-white text-slate-800">
       
       {/* Hero Header */}
-      <section className="relative py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
         <CircuitBackground density="low" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <Badge variant="orange" icon={<RotateCcw className="w-3.5 h-3.5" />} className="mb-4">
+          <Badge variant="orange" icon={<RotateCcw className="w-3.5 h-3.5" />} className="mb-3 sm:mb-4">
             Specialized Hardware Recovery
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto break-words">
             Extend Life. <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-blue-600 to-cyan-600">
               Enhance Reliability.
             </span>
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
             "{BRAND_DATA.refurbishment.subheading}"
           </p>
         </div>
       </section>
 
       {/* Featured Photo & Quote Banner */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl overflow-hidden bg-gradient-to-r from-blue-900 via-[#0A2540] to-blue-950 text-white shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7 p-8 sm:p-12 space-y-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-orange">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-r from-blue-900 via-[#0A2540] to-blue-950 text-white shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-7 p-5 sm:p-12 space-y-3 sm:space-y-4">
+            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest text-brand-orange">
               Engineering Commitment
             </span>
-            <h2 className="text-2xl sm:text-4xl font-display font-extrabold text-white">
+            <h2 className="text-xl sm:text-4xl font-display font-extrabold text-white">
               "{BRAND_DATA.refurbishment.quote}"
             </h2>
             <p className="text-sm text-blue-100 font-sans leading-relaxed">

@@ -1,6 +1,7 @@
 import React from "react";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
+import { CircuitBackground } from "../ui/CircuitBackground";
 import {
   Cpu,
   Target,
@@ -53,34 +54,34 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   return (
     <div className="pt-24 pb-20 bg-white text-slate-800">
       
-      {/* Hero Header with Dynamic Aurora Mesh */}
-      <section className="relative py-20 bg-white border-b border-slate-200 overflow-hidden">
-        <div className="absolute inset-0 hero-aurora-mesh opacity-75 pointer-events-none" />
+      {/* Header */}
+      <section className="relative py-12 sm:py-20 bg-gradient-to-b from-blue-50/80 to-white border-b border-slate-200 overflow-hidden">
+        <CircuitBackground density="low" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <Badge variant="cyan" icon={<Cpu className="w-3.5 h-3.5" />} className="mb-4">
+          <Badge variant="cyan" icon={<Cpu className="w-3.5 h-3.5" />} className="mb-3 sm:mb-4">
             Corporate Profile & Philosophy
           </Badge>
 
-          <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#0A2540] tracking-tight max-w-4xl mx-auto break-words">
             Engineering Precision. <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-brand-orange">
               Sustainable Technology Lifecycle.
             </span>
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
             "{BRAND_DATA.missionStatement}"
           </p>
         </div>
       </section>
 
       {/* Facilities & Operations Unique Photo Showcase */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-mono font-bold text-brand-orange uppercase tracking-widest">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <span className="text-[10px] sm:text-xs font-mono font-bold text-brand-orange uppercase tracking-widest">
             Operational Infrastructure
           </span>
-          <h2 className="text-3xl font-display font-extrabold text-[#0A2540] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-[#0A2540] mt-1">
             Certified Facilities & Diagnostic Laboratories
           </h2>
         </div>

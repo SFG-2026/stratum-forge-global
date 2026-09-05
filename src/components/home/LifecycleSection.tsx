@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Badge } from "../ui/Badge";
 import {
   Truck,
   Cpu,
@@ -9,10 +8,9 @@ import {
   Send,
   TrendingUp,
   CheckCircle2,
-  RefreshCw,
   Zap,
 } from "lucide-react";
-import { BRAND_DATA, type LifecycleStage } from "../../data/content";
+import { BRAND_DATA } from "../../data/content";
 
 export const LifecycleSection: React.FC = () => {
   const [activeStageId, setActiveStageId] = useState<string>("repair");
@@ -41,34 +39,34 @@ export const LifecycleSection: React.FC = () => {
     BRAND_DATA.lifecycle.find((s) => s.id === activeStageId) || BRAND_DATA.lifecycle[3];
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 section-dark overflow-hidden border-t border-slate-800">
+    <section className="relative py-12 sm:py-20 md:py-32 section-dark overflow-hidden border-t border-slate-800">
       
       {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[800px] h-[300px] sm:h-[400px] bg-blue-600/15 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-cyan-500/10 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[280px] sm:w-[800px] h-[250px] sm:h-[400px] bg-blue-600/15 rounded-full blur-[90px] sm:blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] bg-cyan-500/10 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
 
       {/* Subtle Tech Grid */}
       <div className="absolute inset-0 opacity-15 pointer-events-none tech-grid-bg" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <Badge variant="cyan" icon={<RefreshCw className="w-3.5 h-3.5" />} className="mb-4 bg-cyan-950/60 border-cyan-500/30 text-cyan-300">
-            End-to-End Technology Continuity
-          </Badge>
+        {/* Header — proper visual hierarchy for dark section */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-cyan-400/80">
+            How It Works
+          </span>
           
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="mt-2 sm:mt-3 text-2xl sm:text-4xl lg:text-5xl font-display font-black text-white tracking-tight">
             Extending the Life of Technology
           </h2>
 
-          <p className="mt-4 text-sm sm:text-lg text-slate-300 font-sans leading-relaxed">
+          <p className="mt-2.5 sm:mt-4 text-xs sm:text-base text-slate-400 font-sans leading-relaxed">
             StratumForge Global is not just a repair vendor. We are a connected technology lifecycle partner, linking procurement, manufacturing, testing, and value restoration.
           </p>
         </div>
 
         {/* Mobile Horizontal Scrolling Stage Selector (<lg) */}
-        <div className="lg:hidden mb-6 overflow-x-auto pb-3 -mx-4 px-4 flex gap-2 no-scrollbar">
+        <div className="lg:hidden mb-5 overflow-x-auto pb-2 -mx-4 px-4 flex gap-1.5 sm:gap-2 no-scrollbar">
           {BRAND_DATA.lifecycle.map((stage, idx) => {
             const Icon = icons[stage.id] || Cpu;
             const isActive = stage.id === activeStageId;
@@ -78,7 +76,7 @@ export const LifecycleSection: React.FC = () => {
               <button
                 key={stage.id}
                 onClick={() => setActiveStageId(stage.id)}
-                className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-display font-bold transition-all ${
+                className={`flex-shrink-0 flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl border text-[11px] sm:text-xs font-display font-bold transition-all active:scale-95 ${
                   isActive
                     ? isLast
                       ? "bg-brand-orange text-white border-brand-orange shadow-md shadow-orange-500/20"
@@ -152,26 +150,26 @@ export const LifecycleSection: React.FC = () => {
         </div>
 
         {/* Active Stage Deep-Dive Card (Responsive on Mobile) */}
-        <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+        <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-center">
             
             {/* Left: Detail Info */}
-            <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
+            <div className="lg:col-span-7 space-y-3 sm:space-y-4">
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <span className="text-[10px] sm:text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider bg-cyan-950/60 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-cyan-800">
+                <span className="text-[9px] sm:text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider bg-cyan-950/60 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-cyan-800">
                   Phase 0{selectedStage.step} of 07
                 </span>
-                <span className="text-[10px] sm:text-xs font-mono text-slate-400 font-medium">
+                <span className="text-[9px] sm:text-xs font-mono text-slate-400 font-medium">
                   {selectedStage.id.toUpperCase()} PROTOCOL
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white">
+              <h3 className="text-lg sm:text-3xl lg:text-4xl font-display font-extrabold text-white">
                 {selectedStage.name}: {selectedStage.summary}
               </h3>
 
-              <div className="p-3 sm:p-3.5 rounded-xl bg-white/5 border border-slate-700/80 text-xs sm:text-sm font-mono text-brand-orange font-semibold">
+              <div className="p-2.5 sm:p-3.5 rounded-xl bg-white/5 border border-slate-700/80 text-xs sm:text-sm font-mono text-brand-orange font-semibold">
                 "{selectedStage.summary}"
               </div>
 
@@ -180,25 +178,25 @@ export const LifecycleSection: React.FC = () => {
               </p>
 
               {/* Quality Highlights */}
-              <div className="pt-2">
-                <h4 className="text-[11px] sm:text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2.5">
+              <div className="pt-1 sm:pt-2">
+                <h4 className="text-[10px] sm:text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">
                   Key Operational Benchmarks:
                 </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
+                  <div className="p-2 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-[11px] sm:text-xs text-slate-200">
+                    <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                     <span>Serialized Asset Intake & Tracking</span>
                   </div>
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <div className="p-2 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-[11px] sm:text-xs text-slate-200">
+                    <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                     <span>Cleanroom Protocol Compliance</span>
                   </div>
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <div className="p-2 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-[11px] sm:text-xs text-slate-200">
+                    <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                     <span>Parametric Signal & Functional Tests</span>
                   </div>
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <div className="p-2 sm:p-3 rounded-xl bg-slate-800/80 border border-slate-700 flex items-start gap-2 text-[11px] sm:text-xs text-slate-200">
+                    <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                     <span>Full Sustainability Telemetry</span>
                   </div>
                 </div>
@@ -206,8 +204,8 @@ export const LifecycleSection: React.FC = () => {
             </div>
 
             {/* Right: Unique Image Container */}
-            <div className="lg:col-span-5 flex flex-col space-y-3 sm:space-y-4">
-              <div className="h-48 sm:h-64 lg:h-72 rounded-xl sm:rounded-2xl overflow-hidden relative shadow-lg border border-slate-700 group">
+            <div className="lg:col-span-5 flex flex-col space-y-2.5 sm:space-y-4">
+              <div className="h-44 sm:h-64 lg:h-72 rounded-xl sm:rounded-2xl overflow-hidden relative shadow-lg border border-slate-700 group">
                 <img
                   src={stagePhotos[selectedStage.id]}
                   alt={selectedStage.name}
@@ -225,12 +223,12 @@ export const LifecycleSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-slate-700/80 flex items-center justify-between text-xs font-mono text-slate-300">
+              <div className="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 border border-slate-700/80 flex items-center justify-between text-xs font-mono text-slate-300">
                 <div className="flex items-center gap-2">
                   <Zap className="w-3.5 h-3.5 text-brand-orange" />
-                  <span className="text-[11px] sm:text-xs">Automated Quality Handshake</span>
+                  <span className="text-[10px] sm:text-xs">Automated Quality Handshake</span>
                 </div>
-                <span className="text-cyan-300 font-bold text-[11px] sm:text-xs">100% Traceability</span>
+                <span className="text-cyan-300 font-bold text-[10px] sm:text-xs">100% Traceability</span>
               </div>
             </div>
 
