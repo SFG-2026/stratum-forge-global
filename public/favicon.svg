@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#070B16"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" stroke="rgba(0, 210, 255, 0.25)" stroke-width="1.5"/>
+  
+  <!-- Stratum Layer 1 (Navy / Dark Blue base plate) -->
+  <path d="M12 44L28 32L44 44L28 52L12 44Z" fill="#0E1E38" stroke="#1E3A6E" stroke-width="1"/>
+  
+  <!-- Stratum Layer 2 (Electric Blue mid plate) -->
+  <path d="M12 34L28 22L44 34L28 42L12 34Z" fill="#0047BA" fill-opacity="0.85" stroke="#0066FF" stroke-width="1.2"/>
+  
+  <!-- Stratum Layer 3 (Cyan top plate) -->
+  <path d="M12 24L28 12L44 24L28 32L12 24Z" fill="#00D2FF" fill-opacity="0.25" stroke="#00D2FF" stroke-width="1.5"/>
+  
+  <!-- Upward Progress Orange Arrow -->
+  <path d="M28 40V14M28 14L21 21M28 14L35 21" stroke="#FF5A1F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Circuit Accent Dots -->
+  <circle cx="28" cy="14" r="2.5" fill="#FF7A45"/>
+  <circle cx="50" cy="18" r="2" fill="#00D2FF"/>
+  <circle cx="14" cy="50" r="1.5" fill="#0066FF"/>
+</svg>
