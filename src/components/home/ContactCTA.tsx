@@ -51,13 +51,6 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
                   <Phone className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
                   <span>{BRAND_DATA.contact.phonePrimary}</span>
                 </a>
-                <a
-                  href={`tel:${BRAND_DATA.contact.phoneSecondary}`}
-                  className="flex items-center gap-1.5 sm:gap-2 bg-white px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full border border-slate-200 hover:border-blue-300 hover:text-blue-600 active:scale-95 transition-all shadow-sm text-[11px] sm:text-xs"
-                >
-                  <Phone className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                  <span>{BRAND_DATA.contact.phoneSecondary}</span>
-                </a>
                 <div className="flex items-center gap-1.5 sm:gap-2 bg-white px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full border border-slate-200 shadow-sm text-[11px] sm:text-xs">
                   <MapPin className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
                   <span>{BRAND_DATA.contact.location}</span>
